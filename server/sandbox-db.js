@@ -73,9 +73,6 @@ async function sandbox () {
     const brand1 = await db.find( { $where: function() {return (this.brand == "dedicatedbrand")} } );
 
 
-    
-
-
     console.log(`👕 ${loomOnly.length} total of products found for Loom`);
     console.log(loomOnly);
 
