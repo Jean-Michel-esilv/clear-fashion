@@ -60,6 +60,21 @@ async function sandbox () {
     console.log('💽  Find Loom products only');
 
     const loomOnly = await db.find({'brand': 'loom'});
+    
+    const price70 = await db.find({price:{lt:70}};
+    const price701 = await db.find({price:{$not:{$gt:70}}})
+    
+    
+    const sortprice = await db.aggregate([{$sort : {price : 1 }}]);
+    const sortprice1 = await db.find().sort({price: 1})
+    
+
+    const brand = await db.find({brand: « dedicated brand »});
+    const brand1 = await db.find( { $where: function() {return (this.brand == "dedicatedbrand")} } );
+
+
+    
+
 
     console.log(`👕 ${loomOnly.length} total of products found for Loom`);
     console.log(loomOnly);
