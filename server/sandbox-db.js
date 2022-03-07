@@ -69,7 +69,7 @@ async function sandbox () {
     const sortprice1 = await db.find().sort({price: 1})
     
 
-    const brand = await db.find({brand: « dedicated brand »});
+    const brand = await db.find({brand: "dedicatedbrand"});
     const brand1 = await db.find( { $where: function() {return (this.brand == "dedicatedbrand")} } );
 
 
